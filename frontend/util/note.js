@@ -30,6 +30,6 @@ class Note {
   stop() {
     this.gainNode.gain.value = 0;
   }
-};
+}
 
 export default Note;
