@@ -61,7 +61,7 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	document.addEventListener("DOMContentLoaded", function () {
-	  var store = (0, _store2.default)();
+	  var store = (0, _store2.default)({ notes: ["a", "s"] });
 	  var rootEl = document.getElementById('root');
 	
 	  _reactDom2.default.render(_react2.default.createElement(
@@ -21459,12 +21459,8 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var preloadedState = {
-	  notes: []
-	};
-	
-	var configureStore = function configureStore() {
-	  return (0, _redux.createStore)(_root_reducer2.default, preloadedState);
+	var configureStore = function configureStore(preLoadedState) {
+	  return (0, _redux.createStore)(_root_reducer2.default, preLoadedState);
 	};
 	
 	exports.default = configureStore;

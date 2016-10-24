@@ -4,7 +4,7 @@ import configureStore from './store/store';
 
 
 document.addEventListener("DOMContentLoaded", () => {
-  const store = configureStore();
+  const store = configureStore( {notes: ["a", "s"]} );
   const rootEl = document.getElementById('root');
 
   ReactDOM.render(<h1> Synthesizer </h1>, rootEl);
