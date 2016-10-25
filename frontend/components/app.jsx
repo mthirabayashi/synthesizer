@@ -1,9 +1,16 @@
 import React from "react";
+import SynthContainer from './synth/synth_container';
 
-const App = {
-  // return(
-    <div class="App"></div>
-  // )
-};
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render(){
+    return(
+      <SynthContainer />
+    );
+  }
+}
 
 export default App;

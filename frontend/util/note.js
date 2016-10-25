@@ -1,3 +1,11 @@
+// const NOTE_VALES = {
+//  523.25: 'a',
+//  587.33: 's',
+//  659.25: 'd',
+//  698.46: 'f',
+//  783.99: 'g'
+// };
+
 const ctx = new (window.AudioContext || window.webkitAudioContext)();
 
 const createOscillator = (freq) => {
@@ -18,6 +26,7 @@ const createGainNode = () => {
 
 class Note {
   constructor(freq) {
+    this.freq = freq;
     this.oscillatorNode = createOscillator(freq);
     this.gainNode = createGainNode();
     this.oscillatorNode.connect(this.gainNode);
