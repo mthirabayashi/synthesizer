@@ -1,0 +1,35 @@
+body {
+  background-color: grey;
+}
+
+div {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+div > ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+div > ul > li {
+  border: 2px solid grey;
+  list-style: none;
+  min-height: 100px;
+  padding:20px;
+}
+
+div > ul > li:nth-child(even) {
+  background-color: black;
+  color: white;
+}
+
+.true {
+  border: 2px solid red;
+  background-color: white;
+}
+
+.false {
+  background-color: white;
+}

@@ -23346,6 +23346,10 @@
 	
 	var _jquery2 = _interopRequireDefault(_jquery);
 	
+	var _note_key = __webpack_require__(207);
+	
+	var _note_key2 = _interopRequireDefault(_note_key);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -23415,6 +23419,13 @@
 	    value: function render() {
 	      console.log("render entered");
 	      this.playNotes();
+	
+	      var pressed = {};
+	
+	      this.props.notes.forEach(function (note) {
+	        return pressed[note] = true;
+	      });
+	
 	      return _react2.default.createElement(
 	        'div',
 	        null,
@@ -23422,11 +23433,7 @@
 	          'ul',
 	          null,
 	          this.notes.map(function (note, index) {
-	            return _react2.default.createElement(
-	              'li',
-	              { key: index },
-	              _tones.NOTE_NAMES[index]
-	            );
+	            return _react2.default.createElement(_note_key2.default, { key: index, note: _tones.NOTE_NAMES[index], pressed: pressed[_tones.NOTE_NAMES[index]] === true ? true : false });
 	          })
 	        )
 	      );
@@ -33730,6 +33737,35 @@
 	return jQuery;
 	} );
 
+
+/***/ },
+/* 207 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var NoteKey = function NoteKey(_ref) {
+	  var note = _ref.note;
+	  var pressed = _ref.pressed;
+	
+	  return _react2.default.createElement(
+	    'li',
+	    { className: pressed },
+	    note
+	  );
+	};
+	
+	exports.default = NoteKey;
 
 /***/ }
 /******/ ]);

@@ -2,6 +2,7 @@ import React from 'react';
 import { NOTE_NAMES, TONES } from '../../util/tones';
 import Note from '../../util/note';
 import $ from 'jquery';
+import NoteKey from './note_key';
 
 class Synth extends React.Component {
   constructor(props) {
@@ -44,11 +45,20 @@ class Synth extends React.Component {
   render() {
     console.log("render entered");
     this.playNotes();
+
+    let pressed = {
+
+    };
+
+    this.props.notes.forEach( (note) => (
+      pressed[note] = true
+    ));
+
     return (
       <div>
         <ul>
           {this.notes.map( (note, index) => (
-            <li key={ index }>{ NOTE_NAMES[index] }</li>
+            <NoteKey key={index} note={NOTE_NAMES[index]} pressed={ pressed[NOTE_NAMES[index]] === true ? true : false }/>
           ) ) }
         </ul>
       </div>
